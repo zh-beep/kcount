@@ -1,6 +1,6 @@
-// Last time K spoke - January 7, 2025, 11:15 AM CT
-// Converting to UTC: CT is UTC-6, so 11:15 AM CT = 5:15 PM UTC
-const lastContactDate = new Date('2025-01-07T17:15:00Z');
+// Last time K spoke - August 7, 2025, 1:40 AM CT
+// Converting to UTC: CT is UTC-5 in August (CDT), so 1:40 AM CT = 6:40 AM UTC
+const lastContactDate = new Date('2025-08-07T06:40:00Z');
 
 function updateTimer() {
     const now = new Date();
