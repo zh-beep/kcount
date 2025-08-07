@@ -1,0 +1,10 @@
+{
+  "name": "kcount",
+  "version": "1.0.0",
+  "description": "Timer tracking how long since K has spoken",
+  "scripts": {
+    "start": "echo 'Open index.html in a browser'"
+  },
+  "author": "",
+  "license": "MIT"
+}
