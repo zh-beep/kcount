@@ -1,6 +1,11 @@
-// Last time K spoke - August 7, 2025, 1:40 AM CT
-// Converting to UTC: CT is UTC-5 in August (CDT), so 1:40 AM CT = 6:40 AM UTC
-const lastContactDate = new Date('2025-08-07T06:40:00Z');
+// Record of previous silence period
+const previousRecord = {
+    startDate: new Date('2025-08-07T06:40:00Z'), // August 7, 2025, 1:40 AM CT
+    endDate: new Date() // Current time when K reached out
+};
+
+// Last time K spoke - updating to right now
+const lastContactDate = new Date();
 
 function updateTimer() {
     const now = new Date();
@@ -36,8 +41,38 @@ function displayLastContactTime() {
     document.getElementById('last-contact-time').textContent = formattedDate;
 }
 
+// Display the latest record
+function displayLatestRecord() {
+    const options = {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+    };
+    
+    const startFormatted = previousRecord.startDate.toLocaleString('en-US', options);
+    const endFormatted = previousRecord.endDate.toLocaleString('en-US', options);
+    
+    // Calculate duration
+    const duration = previousRecord.endDate - previousRecord.startDate;
+    const days = Math.floor(duration / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+    
+    const recordElement = document.getElementById('latest-record');
+    if (recordElement) {
+        recordElement.innerHTML = `
+            <strong>Latest Record:</strong> ${days} days, ${hours} hours, ${minutes} minutes<br>
+            <span style="font-size: 0.9em; opacity: 0.8;">${startFormatted} → ${endFormatted}</span>
+        `;
+    }
+}
+
 // Initialize
 displayLastContactTime();
+displayLatestRecord();
 updateTimer();
 
 // Update every second

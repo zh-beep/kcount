@@ -74,6 +74,16 @@ h1 {
     font-weight: 600;
 }
 
+.latest-record {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    font-size: 1rem;
+    line-height: 1.6;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 1.8rem;
