@@ -84,6 +84,62 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.leaderboard {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.leaderboard h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#leaderboard-list ol {
+    list-style: none;
+    padding: 0;
+    counter-reset: position;
+}
+
+.leaderboard-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    counter-increment: position;
+}
+
+.leaderboard-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.leaderboard-item::before {
+    content: counter(position) ".";
+    position: absolute;
+    left: -25px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.leaderboard-item .duration {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.leaderboard-item .dates {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 1.8rem;
