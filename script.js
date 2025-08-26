@@ -1,13 +1,13 @@
 // Leaderboard of silence periods (sorted by duration, longest first)
 const silencePeriods = [
     {
-        startDate: new Date('2025-08-24T05:50:00Z'), // Saturday, August 24, 2025, 12:50 AM CT
-        endDate: new Date('2025-08-25T04:24:00Z'),   // Saturday, August 24, 2025, 11:24 PM CT
+        startDate: new Date('2025-08-23T05:50:00Z'), // Saturday, August 23, 2025, 12:50 AM CT
+        endDate: new Date('2025-08-24T04:24:00Z'),   // Saturday, August 23, 2025, 11:24 PM CT
         duration: null // Will be calculated
     },
     {
         startDate: new Date('2025-08-07T06:40:00Z'), // August 7, 2025, 1:40 AM CT
-        endDate: new Date('2025-08-24T05:50:00Z'),   // August 24, 2025, 12:50 AM CT
+        endDate: new Date('2025-08-23T05:50:00Z'),   // August 23, 2025, 12:50 AM CT
         duration: null // Will be calculated
     }
 ];
@@ -20,8 +20,8 @@ silencePeriods.forEach(period => {
 // Sort by duration (longest first)
 silencePeriods.sort((a, b) => b.duration - a.duration);
 
-// Last time K spoke - yesterday at 9:58 PM CT
-const lastContactDate = new Date('2025-08-26T02:58:00Z'); // August 25, 2025, 9:58 PM CT
+// Last time K spoke - August 24 at 9:58 PM CT
+const lastContactDate = new Date('2025-08-25T02:58:00Z'); // August 24, 2025, 9:58 PM CT
 
 function updateTimer() {
     const now = new Date();
